@@ -26,6 +26,10 @@ struct Color {
         self.init(r: 0, g: 0, b: 0, a: 1)
     }
     
+    init(vec: Vec3) {
+        self.init(r: vec.x, g: vec.y, b: vec.z)
+    }
+    
     func saturated() -> Color {
         return Color(r: clamp01(r), g: clamp01(g), b: clamp01(b), a: clamp01(a))
     }
