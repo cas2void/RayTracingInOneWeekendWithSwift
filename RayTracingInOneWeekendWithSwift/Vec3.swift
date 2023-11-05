@@ -10,6 +10,8 @@ struct Vec3 {
     var y: Float
     var z: Float
     
+    static let zero = Vec3(x: 0, y: 0, z: 0)
+    
     // vector arithmetic
     static func + (lhs: Vec3, rhs: Vec3) -> Vec3 {
         return Vec3(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z)
