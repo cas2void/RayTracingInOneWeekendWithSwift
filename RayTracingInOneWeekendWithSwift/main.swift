@@ -6,7 +6,7 @@
 //
 
 func rayColor(ray: Ray, hittable: Hittable) -> Color {
-    if let hitData = hittable.hit(ray: ray, tMin: 0, tMax: Float.greatestFiniteMagnitude) {
+    if let hitData = hittable.hit(ray: ray, interval: Interval(min: 0)) {
         return Color(vec: 0.5 * (hitData.normal + 1))
     }
     

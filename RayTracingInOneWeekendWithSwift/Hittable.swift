@@ -31,7 +31,7 @@ struct HitData {
 }
 
 protocol Hittable {
-    func hit(ray: Ray, tMin: Float, tMax: Float) -> HitData?
+    func hit(ray: Ray, interval: Interval) -> HitData?
 }
 
 struct Sphere: Hittable {
@@ -48,7 +48,7 @@ struct Sphere: Hittable {
     //
     // dot((O + t*D - C), (O + t*D - C)) = r * r
     // t * t * dot(D, D) + 2 * t * dot(D, O - C) + dot(O - C, O - C) - r * r = 0
-    func hit(ray: Ray, tMin: Float, tMax: Float) -> HitData? {
+    func hit(ray: Ray, interval: Interval) -> HitData? {
         // O - C
         let oc = ray.origin - center;
         // dot(D, D)
@@ -62,11 +62,11 @@ struct Sphere: Hittable {
         if discriminant >= 0 {
             let root = discriminant.squareRoot()
             var solution = (-b - root) / (2 * a)
-            if let hitData = checkSolution(solution: solution, ray: ray, tMin: tMin, tMax: tMax) {
+            if let hitData = checkSolution(solution: solution, ray: ray, interval: interval) {
                 return hitData
             } else {
                 solution = (-b + root) / (2 * a)
-                if let hitData = checkSolution(solution: solution, ray: ray, tMin: tMin, tMax: tMax) {
+                if let hitData = checkSolution(solution: solution, ray: ray, interval: interval) {
                     return hitData
                 }
             }
@@ -75,8 +75,8 @@ struct Sphere: Hittable {
         return nil
     }
     
-    private func checkSolution(solution: Float, ray: Ray, tMin: Float, tMax: Float) -> HitData? {
-        if solution > tMin && solution < tMax {
+    private func checkSolution(solution: Float, ray: Ray, interval: Interval) -> HitData? {
+        if interval.surrounds(solution) {
             let hitPosition = ray.at(t: solution)
             let outwardNormal = 1 / radius * (hitPosition - center)
             return HitData(t: solution, position: hitPosition, outwardNormal: outwardNormal, ray: ray)

@@ -14,6 +14,7 @@
 		F9AAE0AF2AF24E5E004053CE /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAE0AE2AF24E5E004053CE /* Ray.swift */; };
 		F9BBE21F2AE12032002588AF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BBE21E2AE12032002588AF /* Film.swift */; };
 		F9D70CCC2AD8E51200A83A8A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D70CCB2AD8E51200A83A8A /* main.swift */; };
+		F9E5C9492AF92C56000EC296 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5C9482AF92C56000EC296 /* Interval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		F9BBE21E2AE12032002588AF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		F9D70CC82AD8E51200A83A8A /* RayTracingInOneWeekendWithSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracingInOneWeekendWithSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D70CCB2AD8E51200A83A8A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F9E5C9482AF92C56000EC296 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				F9AAE0AC2AF24958004053CE /* Vec3.swift */,
 				F9BBE21E2AE12032002588AF /* Film.swift */,
 				F97302002AECF08F0073A8D5 /* Color.swift */,
+				F9E5C9482AF92C56000EC296 /* Interval.swift */,
 			);
 			path = RayTracingInOneWeekendWithSwift;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				F9AAE0AD2AF24958004053CE /* Vec3.swift in Sources */,
 				F968FD442AF7B597003F8AE6 /* Scene.swift in Sources */,
 				F97302012AECF08F0073A8D5 /* Color.swift in Sources */,
+				F9E5C9492AF92C56000EC296 /* Interval.swift in Sources */,
 				F9AAE0AF2AF24E5E004053CE /* Ray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
