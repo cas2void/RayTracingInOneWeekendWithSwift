@@ -16,8 +16,9 @@ func rayColor(ray: Ray, hittable: Hittable) -> Color {
     return Color(vec: gradient)
 }
 
-let imageWidth = 320
-let imageHeight = 180
+let imageScale = 1
+let imageWidth = 320 * imageScale
+let imageHeight = 180 * imageScale
 
 let scene = Scene(hittables: [Sphere(center: Vec3(x: 0, y: 0, z: 1), radius: 0.5), Sphere(center: Vec3(x: 0, y: -100.5, z: 1), radius: 100)])
 
@@ -36,16 +37,23 @@ let pixelDeltaV = Vec3(x: 0, y: -viewportHeight / Float(imageHeight), z: 0)
 let viewportUpperLeft = cameraCenter + Vec3(x: 0, y: 0, z: focalLength) + Vec3(x: viewportWidth * -0.5, y: viewportHeight * 0.5, z: 0)
 let pixel00Location = viewportUpperLeft + 0.5 * (pixelDeltaU + pixelDeltaV)
 
+var tracingStat = TimeStat(name: "Tracing time per pixel")
+var sensingStat = TimeStat(name: "Sensing time per pixel")
 var film = Film(width: imageWidth, height: imageHeight)
 for y in 0..<film.height {
     for x in 0..<film.width {
+        tracingStat.start()
         let pixelCenter = pixel00Location + Float(x) * pixelDeltaU + Float(y) * pixelDeltaV
-        
         let rayDirection = pixelCenter - cameraCenter
         let ray = Ray(origin: cameraCenter, direction: rayDirection)
+        tracingStat.end()
         
+        sensingStat.start()
         film.sense(x: x, y: y, color: rayColor(ray: ray, hittable: scene))
+        sensingStat.end()
     }
 }
 
 film.savePNG(name: "test")
+print(tracingStat.toString(sampleUnit: .microseconds, sumUnit: .milliseconds))
+print(sensingStat.toString(sampleUnit: .microseconds, sumUnit: .milliseconds))

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F928445F2AFA736700FDA09B /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928445E2AFA736700FDA09B /* Stat.swift */; };
 		F968FD422AF7A31A003F8AE6 /* Hittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968FD412AF7A31A003F8AE6 /* Hittable.swift */; };
 		F968FD442AF7B597003F8AE6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968FD432AF7B597003F8AE6 /* Scene.swift */; };
 		F97302012AECF08F0073A8D5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97302002AECF08F0073A8D5 /* Color.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F928445E2AFA736700FDA09B /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		F968FD412AF7A31A003F8AE6 /* Hittable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hittable.swift; sourceTree = "<group>"; };
 		F968FD432AF7B597003F8AE6 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		F97302002AECF08F0073A8D5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				F9D70CCB2AD8E51200A83A8A /* main.swift */,
 				F968FD412AF7A31A003F8AE6 /* Hittable.swift */,
+				F928445E2AFA736700FDA09B /* Stat.swift */,
 				F9AAE0AE2AF24E5E004053CE /* Ray.swift */,
 				F968FD432AF7B597003F8AE6 /* Scene.swift */,
 				F9AAE0AC2AF24958004053CE /* Vec3.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F928445F2AFA736700FDA09B /* Stat.swift in Sources */,
 				F968FD422AF7A31A003F8AE6 /* Hittable.swift in Sources */,
 				F9D70CCC2AD8E51200A83A8A /* main.swift in Sources */,
 				F9BBE21F2AE12032002588AF /* Film.swift in Sources */,
