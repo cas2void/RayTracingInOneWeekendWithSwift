@@ -5,11 +5,11 @@
 //  Created by cas2void on 2023/11/5.
 //
 
-struct Scene: Hittable {
-    var hittables: [Hittable]
+struct Scene<T: BinaryFloatingPoint>: Hittable {
+    var hittables: [any Hittable<T>]
     
-    func hit(ray: Ray, interval: Interval) -> HitData? {
-        var hitData: HitData?
+    func hit(ray: Ray<T>, interval: Interval<T>) -> HitData<T>? {
+        var hitData: HitData<T>?
         var closestSoFar = interval.max
         
         for hittable in hittables {

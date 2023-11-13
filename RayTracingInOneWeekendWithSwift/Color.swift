@@ -11,6 +11,10 @@ struct Color {
     var b: Float
     var a: Float
     
+    static func make<T: BinaryFloatingPoint>(vec: Vec3<T>) -> Color {
+        return Color(r: Float(vec.x), g: Float(vec.y), b: Float(vec.z))
+    }
+    
     init(r: Float, g: Float, b: Float, a: Float) {
         self.r = r
         self.g = g
@@ -24,10 +28,6 @@ struct Color {
     
     init() {
         self.init(r: 0, g: 0, b: 0, a: 1)
-    }
-    
-    init(vec: Vec3) {
-        self.init(r: vec.x, g: vec.y, b: vec.z)
     }
     
     func saturated() -> Color {
