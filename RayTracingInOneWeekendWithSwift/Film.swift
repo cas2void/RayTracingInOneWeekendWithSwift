@@ -30,7 +30,7 @@ struct Film {
         buffer[y][x] = color;
     }
     
-    func savePNG(name: String) {
+    func exportPNG(name: String) {
         let numChannel = 4
         let bitsPerChannel = UInt8.bitWidth
         let maxChannelValue = powf(2, Float(bitsPerChannel)) - 1
